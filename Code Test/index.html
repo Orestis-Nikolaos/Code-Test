@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+
+        <div class="container-calendar">
+            <h3 id="monthAndYear"></h3>
+
+            <div class="button-container-calendar">
+                <button id="previous" onclick="previous()">&#8249;</button>
+                <button id="next" onclick="next()">&#8250;</button>
+            </div>
+
+            <table class="table-calendar" id="calendar" data-lang="en">
+                <thead id="thead-month"></thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+
+            <div class="footer-container-calendar">
+                <label for="month">Chosen Date: </label>
+                <select id="day">
+                    <option value=0>01</option>
+                    <option value=1>02</option>
+                    <option value=2>03</option>
+                    <option value=3>04</option>
+                    <option value=4>05</option>
+                    <option value=5>06</option>
+                    <option value=6>07</option>
+                    <option value=7>08</option>
+                    <option value=8>09</option>
+                    <option value=9>10</option>
+                    <option value=10>11</option>
+                    <option value=11>12</option>
+                    <option value=12>13</option>
+                    <option value=13>14</option>
+                    <option value=14>15</option>
+                    <option value=15>16</option>
+                    <option value=16>17</option>
+                    <option value=17>18</option>
+                    <option value=18>19</option>
+                    <option value=19>20</option>
+                    <option value=20>21</option>
+                    <option value=21>22</option>
+                    <option value=22>23</option>
+                    <option value=23>24</option>
+                    <option value=24>25</option>
+                    <option value=25>26</option>
+                    <option value=26>27</option>
+                    <option value=27>28</option>
+                    <option class="hideFeb" id="showLeap" value=28>29</option>
+                    <option class="hideFeb" id="showEx" value=29>30</option>
+                    <option class="hideFeb" id="hide" value=30>31</option>
+                </select>
+                <select id="month" onchange="jump()">
+                    <option value=0>Jan</option>
+                    <option value=1>Feb</option>
+                    <option value=2>Mar</option>
+                    <option value=3>Apr</option>
+                    <option value=4>May</option>
+                    <option value=5>Jun</option>
+                    <option value=6>Jul</option>
+                    <option value=7>Aug</option>
+                    <option value=8>Sep</option>
+                    <option value=9>Oct</option>
+                    <option value=10>Nov</option>
+                    <option value=11>Dec</option>
+                </select>
+                <select id="year" onchange="jump()"></select>
+
+                <label id="time" for="hour">Select Time: </label>
+                <select id="hour">
+                    <option value="0">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+
+                </select>
+
+
+                <textarea name="" id="Title" cols="30" rows="1" placeholder="Event Name"></textarea>
+                <textarea name="" id="Description" cols="30" rows="5" placeholder="Event Desctription"></textarea>
+                <textarea name="" id="UpdateName" cols="30" rows="1" placeholder="Update Event Name"></textarea>
+                <textarea name="" id="UpdateDescription" cols="30" rows="5"
+                    placeholder="Update Event Description"></textarea>
+                <button id="create">Create Event</button>
+                <button id="delete">Delete Event</button>
+                <button id="update">Update Event</button>
+                <button id="list">List All Events</button>
+
+
+                <table id="hidden" class="table table-striped">
+                    <tr class="bg-info">
+                        <th>Event Name </th>
+                        <th> Event Description </th>
+                        <th> Event Date </th>
+                    </tr>
+
+                    <tbody id="myTable">
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- partial -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
